@@ -2,6 +2,7 @@
 using DataLayer;
 using DataLayer.Repositories;
 using DataLayer.services;
+using DataLayer.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +14,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            ICustomerRepository customerRepository = new CustomerRepository();
+            UnitOfWork db = new UnitOfWork();
+            List<Customers> list = db.CustomerRepository.GetAllCustomers();
 
-            Customers customer = new Customers()
-            {
-                Name="محمدرضا",
-                Family="ضیایی جزی",
-                PhoneNumber="09133282279",
-                Email="MohammadRezaZiaei@gmail.com",
-                Address="اصفهان،گز برخوار",
-                CustomerImage="NoPhoto"
-            };
-            customerRepository.InsertCustomer(customer);
-            customerRepository.save();
+            db.Dispose();
         }
     }
 }

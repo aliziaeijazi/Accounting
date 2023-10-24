@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Context\UnitOfWork.cs" />
     <Compile Include="Customers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -10,7 +10,12 @@ namespace DataLayer.services
 {
     public class CustomerRepository : ICustomerRepository
     {
-        Accounting_DBEntities db = new Accounting_DBEntities();
+        private Accounting_DBEntities db;
+
+        public CustomerRepository(Accounting_DBEntities context)
+        {
+            db = context;
+        }
         public List<Customers> GetAllCustomers()
         {
             return db.Customers.ToList();

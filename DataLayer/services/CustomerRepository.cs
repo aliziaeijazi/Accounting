@@ -75,10 +75,10 @@ namespace DataLayer.services
             }
         }
 
-        public void save()
-        {
-            db.SaveChanges();
-        }
 
+        public IEnumerable<Customers> GetCustomersByFilter(string filterStr)
+        {
+            return db.Customers.Where(c => c.Name.Contains(filterStr) || c.Family.Contains(filterStr) || c.Email.Contains(filterStr) || c.PhoneNumber.Contains(filterStr)).ToList();
+        }
     }
 }

@@ -23,6 +23,11 @@ namespace DataLayer.Context
                 return _customerRepository;
             } 
         }
+
+        public void save()
+        {
+            db.SaveChanges();
+        }
         public void Dispose()
         {
             

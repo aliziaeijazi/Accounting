@@ -12,8 +12,8 @@ namespace DataLayer.Repositories
         Customers GetCustomerById(int customerId);
         bool InsertCustomer(Customers customer);
         bool UpdateCustomer(Customers customer);
+        IEnumerable<Customers> GetCustomersByFilter(string filterStr);
         bool DeleteCustomer(Customers customer);
         bool DeleteCustomer(int customerId);
-        void save();
     }
 }

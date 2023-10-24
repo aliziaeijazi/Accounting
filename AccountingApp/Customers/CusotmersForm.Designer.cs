@@ -30,12 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.addCustomerBtn = new System.Windows.Forms.ToolStripButton();
-            this.editCustomerBtn = new System.Windows.Forms.ToolStripButton();
-            this.deleteCustomerBtn = new System.Windows.Forms.ToolStripButton();
-            this.refrshCustomerBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.searchCustomerInput = new System.Windows.Forms.ToolStripTextBox();
             this.DataGridCustomer = new System.Windows.Forms.DataGridView();
             this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +43,11 @@
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accounting_DBDataSet = new AccountingApp.Accounting_DBDataSet();
             this.customersTableAdapter = new AccountingApp.Accounting_DBDataSetTableAdapters.CustomersTableAdapter();
+            this.addCustomerBtn = new System.Windows.Forms.ToolStripButton();
+            this.editCustomerBtn = new System.Windows.Forms.ToolStripButton();
+            this.deleteCustomerBtn = new System.Windows.Forms.ToolStripButton();
+            this.refrshCustomerBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
@@ -70,68 +70,10 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // addCustomerBtn
-            // 
-            this.addCustomerBtn.Font = new System.Drawing.Font("IRANSans", 8.25F);
-            this.addCustomerBtn.Image = global::AccountingApp.Properties.Resources.icons8_add_user_male_48px_1;
-            this.addCustomerBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.addCustomerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addCustomerBtn.Name = "addCustomerBtn";
-            this.addCustomerBtn.Size = new System.Drawing.Size(69, 69);
-            this.addCustomerBtn.Text = "شخص جدید";
-            this.addCustomerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.addCustomerBtn.Click += new System.EventHandler(this.addCustomerBtn_Click);
-            // 
-            // editCustomerBtn
-            // 
-            this.editCustomerBtn.Font = new System.Drawing.Font("IRANSans", 8.25F);
-            this.editCustomerBtn.Image = global::AccountingApp.Properties.Resources.icons8_user_engagement_male_48px;
-            this.editCustomerBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.editCustomerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.editCustomerBtn.Name = "editCustomerBtn";
-            this.editCustomerBtn.Size = new System.Drawing.Size(79, 69);
-            this.editCustomerBtn.Text = "ویرایش شخص";
-            this.editCustomerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // deleteCustomerBtn
-            // 
-            this.deleteCustomerBtn.Font = new System.Drawing.Font("IRANSans", 8.25F);
-            this.deleteCustomerBtn.Image = global::AccountingApp.Properties.Resources.icons8_delete_user_male_48px;
-            this.deleteCustomerBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.deleteCustomerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.deleteCustomerBtn.Name = "deleteCustomerBtn";
-            this.deleteCustomerBtn.Size = new System.Drawing.Size(68, 69);
-            this.deleteCustomerBtn.Text = "حذف شخص";
-            this.deleteCustomerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.deleteCustomerBtn.Click += new System.EventHandler(this.deleteCustomerBtn_Click);
-            // 
-            // refrshCustomerBtn
-            // 
-            this.refrshCustomerBtn.Font = new System.Drawing.Font("IRANSans", 8.25F);
-            this.refrshCustomerBtn.Image = global::AccountingApp.Properties.Resources.icons8_change_user_48px;
-            this.refrshCustomerBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.refrshCustomerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.refrshCustomerBtn.Name = "refrshCustomerBtn";
-            this.refrshCustomerBtn.Size = new System.Drawing.Size(60, 69);
-            this.refrshCustomerBtn.Text = " بروزرسانی ";
-            this.refrshCustomerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.refrshCustomerBtn.Click += new System.EventHandler(this.refrshCustomerBtn_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 72);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("IRANSans", 8.25F);
-            this.toolStripLabel1.Image = global::AccountingApp.Properties.Resources.icons8_find_user_male_24px;
-            this.toolStripLabel1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(42, 69);
-            this.toolStripLabel1.Text = "جستجو";
-            this.toolStripLabel1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripLabel1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // searchCustomerInput
             // 
@@ -231,6 +173,65 @@
             // customersTableAdapter
             // 
             this.customersTableAdapter.ClearBeforeFill = true;
+            // 
+            // addCustomerBtn
+            // 
+            this.addCustomerBtn.Font = new System.Drawing.Font("IRANSans", 8.25F);
+            this.addCustomerBtn.Image = global::AccountingApp.Properties.Resources.icons8_add_user_male_48px_1;
+            this.addCustomerBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addCustomerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addCustomerBtn.Name = "addCustomerBtn";
+            this.addCustomerBtn.Size = new System.Drawing.Size(69, 69);
+            this.addCustomerBtn.Text = "شخص جدید";
+            this.addCustomerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.addCustomerBtn.Click += new System.EventHandler(this.addCustomerBtn_Click);
+            // 
+            // editCustomerBtn
+            // 
+            this.editCustomerBtn.Font = new System.Drawing.Font("IRANSans", 8.25F);
+            this.editCustomerBtn.Image = global::AccountingApp.Properties.Resources.icons8_user_engagement_male_48px;
+            this.editCustomerBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editCustomerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.editCustomerBtn.Name = "editCustomerBtn";
+            this.editCustomerBtn.Size = new System.Drawing.Size(79, 69);
+            this.editCustomerBtn.Text = "ویرایش شخص";
+            this.editCustomerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editCustomerBtn.Click += new System.EventHandler(this.editCustomerBtn_Click);
+            // 
+            // deleteCustomerBtn
+            // 
+            this.deleteCustomerBtn.Font = new System.Drawing.Font("IRANSans", 8.25F);
+            this.deleteCustomerBtn.Image = global::AccountingApp.Properties.Resources.icons8_delete_user_male_48px;
+            this.deleteCustomerBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteCustomerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteCustomerBtn.Name = "deleteCustomerBtn";
+            this.deleteCustomerBtn.Size = new System.Drawing.Size(68, 69);
+            this.deleteCustomerBtn.Text = "حذف شخص";
+            this.deleteCustomerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.deleteCustomerBtn.Click += new System.EventHandler(this.deleteCustomerBtn_Click);
+            // 
+            // refrshCustomerBtn
+            // 
+            this.refrshCustomerBtn.Font = new System.Drawing.Font("IRANSans", 8.25F);
+            this.refrshCustomerBtn.Image = global::AccountingApp.Properties.Resources.icons8_change_user_48px;
+            this.refrshCustomerBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.refrshCustomerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.refrshCustomerBtn.Name = "refrshCustomerBtn";
+            this.refrshCustomerBtn.Size = new System.Drawing.Size(60, 69);
+            this.refrshCustomerBtn.Text = " بروزرسانی ";
+            this.refrshCustomerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.refrshCustomerBtn.Click += new System.EventHandler(this.refrshCustomerBtn_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("IRANSans", 8.25F);
+            this.toolStripLabel1.Image = global::AccountingApp.Properties.Resources.icons8_find_user_male_24px;
+            this.toolStripLabel1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 69);
+            this.toolStripLabel1.Text = "جستجو";
+            this.toolStripLabel1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripLabel1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // CusotmersForm
             // 

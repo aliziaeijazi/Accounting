@@ -38,15 +38,14 @@ namespace DataLayer.services
         }
         public bool UpdateCustomer(Customers customer)
         {
-            try
+            var local = db.Set<DataLayer.Customers>().Local.FirstOrDefault(f => f.CustomerID == customer.CustomerID);
+            if (local != null)
             {
-                db.Entry(customer).State=EntityState.Modified;
-                return true;
+                db.Entry(local).State = EntityState.Detached;
             }
-            catch (Exception)
-            {
-                return false;
-            }
+            db.Entry(customer).State = EntityState.Modified;
+            return true;
+
         }
 
         public bool DeleteCustomer(Customers customer)

@@ -82,5 +82,20 @@ namespace AccountingApp
                 LoadDataGridCustomers();
             }
         }
+
+        private void editCustomerBtn_Click(object sender, EventArgs e)
+        {
+            if(DataGridCustomer.CurrentRow != null)
+            {
+                int customerId = int.Parse(DataGridCustomer.CurrentRow.Cells[0].Value.ToString());
+                AddOrEditCustomersForm addOrEditCustomerFrm = new AddOrEditCustomersForm();
+                addOrEditCustomerFrm.customerId = customerId;
+                DialogResult updateStatus = addOrEditCustomerFrm.ShowDialog();
+                if(updateStatus == DialogResult.OK)
+                {
+                    LoadDataGridCustomers();
+                }
+            }
+        }
     }
 }

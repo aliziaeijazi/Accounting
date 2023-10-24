@@ -15,7 +15,7 @@ namespace AccountingApp.Customers
 {
     public partial class AddOrEditCustomersForm : Form
     {
-
+        public int customerId = 0;
         UnitOfWork db = new UnitOfWork();
         public AddOrEditCustomersForm()
         {
@@ -45,7 +45,7 @@ namespace AccountingApp.Customers
                 }
 
                 CustomerPhoto.Image.Save(path + imageName);
-                DataLayer.Customers newCustomer = new DataLayer.Customers()
+                DataLayer.Customers customer = new DataLayer.Customers()
                 {
                     Name = customerNameInput.Text,
                     Family = customerFamilyInput.Text,
@@ -54,12 +54,35 @@ namespace AccountingApp.Customers
                     Address = customerAddressInput.Text,
                     CustomerImage = imageName
                 };
-                db.CustomerRepository.InsertCustomer(newCustomer);
+                if (customerId == 0)
+                {
+                    db.CustomerRepository.InsertCustomer(customer);
+
+                }
+                else
+                {
+                    customer.CustomerID = customerId;
+                    db.CustomerRepository.UpdateCustomer(customer);
+                }
                 db.save();
                 DialogResult = DialogResult.OK;
             }
         }
 
-
+        private void AddOrEditCustomersForm_Load(object sender, EventArgs e)
+        {
+            if (customerId != 0)
+            {
+                this.Text = "ویرایش شخص";
+                insertOrEditCustomerBtn.Text = "ویرایش اطلاعات";
+                DataLayer.Customers customer = db.CustomerRepository.GetCustomerById(customerId);
+                customerNameInput.Text = customer.Name;
+                customerFamilyInput.Text = customer.Family;
+                customerPhoneNumberInput.Text = customer.PhoneNumber;
+                customerEmailInput.Text = customer.Email;
+                customerAddressInput.Text = customer.Address;
+                CustomerPhoto.ImageLocation = Application.StartupPath + "/Images/" + customer.CustomerImage;
+            }
+        }
     }
 }
